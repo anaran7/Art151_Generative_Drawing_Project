@@ -8,12 +8,6 @@ let rectangle = {
     speedy: 5
 };
 
-//let x = 50;
-//let y = 5;
-//let speed = 10;
-//let speedy = 10;
-//strokeWeight(2);
-//stroke(200, 20, 20, 255);
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -23,7 +17,8 @@ function setup(){
 
 function draw(){
 
-    strokeWeight(4);
+    strokeWeight(3);
+    //stroke(0,0,0,100);
 
     //the height and the width is decided by mouse input
     rectangle.width = map(mouseX, 0, windowWidth, -20, 20);
@@ -60,10 +55,16 @@ function draw(){
     }
     
     //update x and y location
-    rectangle.x = rectangle.x + rectangle.speed;// + rectangle.width;
-    rectangle.y = rectangle.y + rectangle.speedy;// + rectangle.height;
+    rectangle.x = rectangle.x + rectangle.speed;
+    rectangle.y = rectangle.y + rectangle.speedy;
     
 
     //draws rectangle
     rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 }
+
+function mouseClicked() {
+    //fill(random(0,255), random(0,255), random(0,255), 10);
+    fill(70, 103, 80, 10)
+    rect(0, 0, windowWidth, windowHeight);
+  }
