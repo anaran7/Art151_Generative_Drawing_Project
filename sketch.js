@@ -4,67 +4,99 @@ let rectangle = {
     y: 0,
     width: 10, 
     height: 50,
-    speed: 5,
-    speedy: 5
+    speed: 6,
+    speedy: 6,
+    color1: 0,
+    color2: 0,
+    color3: 0
 };
 
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
     background(70, 103, 80);
+
     fill(random(0,255), random(0,255), random(0,255));
+    updateColors()
+}
+
+function updateColors(){
+    rectangle.color1 = random(0,255);
+    rectangle.color2 = random(0,255);
+    rectangle.color3 = random(0,255);
 }
 
 function draw(){
 
-    strokeWeight(3);
-    //stroke(0,0,0,100);
+    strokeWeight(2);
+    //background("#ffffff01");
+
+
 
     //the height and the width is decided by mouse input
     rectangle.width = map(mouseX, 0, windowWidth, -20, 20);
     rectangle.height = map(mouseY, 0, windowHeight, -100, 100);
-    //rectangle.speed = map(rectangle.width, -20, 20, -10, 10);
-    //rectangle.speedy = map(rectangle.height, -100, 100, 10, 10);
+
 
     //The following conditionals check for left right walls
     if(rectangle.x > windowWidth - rectangle.width){
-        //strokeWeight(map(mouseX, 0, windowWidth, 1, 5));
-        //stroke(random(0,255), random(0,255), random(0,255), random(100,255));
-        fill(random(0,255), random(0,255), random(0,255));
+        updateColors();
+        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speed = rectangle.speed * -1;
+        //rectangle.x = random(windowWidth/2,windowHeight/2);
+        //rectangle.y = random(windowWidth/2,windowHeight/2);
+        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
+        //rect(0, 0, windowWidth, windowHeight);
     }
     else if (rectangle.x < 0){
-        strokeWeight(map(mouseX, 0, windowWidth, 1, 5));
-        //stroke(random(0,255), random(0,255), random(0,255), random(100,255));
-        fill(random(0,255), random(0,255), random(0,255));
+        updateColors();
+        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speed = rectangle.speed * -1;
+        //rectangle.x = random(windowWidth/2,windowHeight/2);
+        //rectangle.y = random(windowWidth/2,windowHeight/2);
+        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
+        //rect(0, 0, windowWidth, windowHeight);
     }
 
     //The following conditionals check for top bottom walls
     if(rectangle.y > windowHeight - rectangle.height){
-        //strokeWeight(map(mouseX, 0, windowWidth, 1, 5));
-        //stroke(random(0,255), random(0,255), random(0,255), random(100,255));
-        fill(random(0,255), random(0,255), random(0,255));
+        updateColors();
+        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speedy = rectangle.speedy * -1;
+        //rectangle.x = random(windowWidth/2,windowHeight/2);
+        //rectangle.y = random(windowWidth/2,windowHeight/2);
+        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
+        //rect(0, 0, windowWidth, windowHeight);
+        
     }
     else if (rectangle.y < 0 ){
-        //strokeWeight(map(mouseX, 0, windowWidth, 1, 5));
-        //stroke(random(0,255), random(0,255), random(0,255), random(100,255));
-        fill(random(0,255), random(0,255), random(0,255));
+        updateColors();
+        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speedy = rectangle.speedy * -1;
+        //rectangle.x = random(rectangle.x + 100,rectangle.x - 100);
+        //rectangle.y = random(rectangle.y + 100,rectangle.y - 100);
+        //rectangle.x = random(windowWidth/2,windowHeight/2);
+        //rectangle.y = random(windowWidth/2,windowHeight/2);
+        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
+        //rect(0, 0, windowWidth, windowHeight);
     }
     
     //update x and y location
     rectangle.x = rectangle.x + rectangle.speed;
     rectangle.y = rectangle.y + rectangle.speedy;
-    
+
+    //random(rectangle.x +10,rectangle.x - 10)
+    //random(rectangle.y +10,rectangle.y - 10)
 
     //draws rectangle
-    rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+    fill(rectangle.color1,rectangle.color2,rectangle.color3);
+    //rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+    rect(random(rectangle.x + 15,rectangle.x - 15), random(rectangle.y + 15,rectangle.y - 15), rectangle.width, rectangle.height);
+
+    
 }
 
 function mouseClicked() {
-    //fill(random(0,255), random(0,255), random(0,255), 10);
     fill(70, 103, 80, 10)
     rect(0, 0, windowWidth, windowHeight);
   }
