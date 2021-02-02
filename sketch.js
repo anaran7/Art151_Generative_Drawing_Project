@@ -17,6 +17,8 @@ let eli = {
 let x = 0;
 let maxDiameter; 
 let theta = 0; 
+let theta1 = 0;
+let ellis = [];
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -38,7 +40,9 @@ function updateColors(){
 function draw(){
 
     //strokeWeight(2);
+    //stroke(noise)
     //background("#ffffff01");
+    //noStroke();  
 
     //the height and the width is decided by mouse input
     eli.width = map(mouseX, 0, windowWidth, -20, 20);
@@ -101,17 +105,41 @@ function draw(){
         fill(eli.color4,eli.color5,eli.color6);
     }
 
-    ellipse(eli.x, eli.y, eli.width, eli.height);
+    //ellipse(eli.x, eli.y, eli.width, eli.height);
     x++;
 
 
-
+    for (let i = 0; i < ellis.length; i++) {
+        ellis[i].display();
+    }
 
     
 }
 
 function mouseClicked() {
-    fill(70, 103, 80, 10)
-    rect(0, 0, windowWidth, windowHeight);
+    //fill(70, 103, 80, 10)
+    //rect(0, 0, windowWidth, windowHeight);
+    //ellipse(eli.x, eli.y, eli.width, eli.height);
+    ellis.push(new Elli(mouseX, mouseY));
+}
 
+
+class Elli {
+  constructor(xv, yv) {
+    this.x = xv;
+    this.y = yv;
+   
+  }
+
+
+  display() {
+    fill(eli.color1,eli.color5,eli.color3, 5);
+    let diam = 100 + sin(theta1) * 500 ;
+
+    // draw the circle 
+    ellipse(this.x,this.y, diam, diam); 
+    // make theta keep getting bigger
+    // you can play with this number to change the speed
+    theta1 += .01; 
+  }
 }
