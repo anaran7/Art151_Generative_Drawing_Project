@@ -9,8 +9,12 @@ let rectangle = {
     color1: 0,
     color2: 0,
     color3: 0
+    color4: 0,
+    color5: 0,
+    color6: 0
 };
 
+let x = 0;
 
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -24,6 +28,9 @@ function updateColors(){
     rectangle.color1 = random(0,255);
     rectangle.color2 = random(0,255);
     rectangle.color3 = random(0,255);
+    rectangle.color4 = random(0,255);
+    rectangle.color5 = random(0,255);
+    rectangle.color6 = random(0,255);
 }
 
 function draw(){
@@ -89,9 +96,18 @@ function draw(){
     //random(rectangle.y +10,rectangle.y - 10)
 
     //draws rectangle
-    fill(rectangle.color1,rectangle.color2,rectangle.color3);
+    //fill(rectangle.color1,rectangle.color2,rectangle.color3);
+    if(x % 2 == 0){
+        fill(rectangle.color1,rectangle.color2,rectangle.color3);
+    }
+    else{
+        fill(rectangle.color3,rectangle.color4,rectangle.color5);
+    }
+    
     //rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-    rect(random(rectangle.x + 15,rectangle.x - 15), random(rectangle.y + 15,rectangle.y - 15), rectangle.width, rectangle.height);
+    //rect(random(rectangle.x + 15,rectangle.x - 15), random(rectangle.y + 15,rectangle.y - 15), rectangle.width, rectangle.height);
+    ellipse(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+    x++;
 
     
 }
