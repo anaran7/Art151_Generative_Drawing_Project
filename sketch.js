@@ -46,54 +46,32 @@ function draw(){
     //The following conditionals check for left right walls
     if(rectangle.x > windowWidth){
         updateColors();
-        //fill(random(0,255), random(0,255), random(0,255));
+        
         rectangle.speed = rectangle.speed * -1;
-        //rectangle.x = random(windowWidth/2,windowHeight/2);
-        //rectangle.y = random(windowWidth/2,windowHeight/2);
-        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
-        //rect(0, 0, windowWidth, windowHeight);
+
     }
     else if (rectangle.x < 0){
         updateColors();
-        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speed = rectangle.speed * -1;
-        //rectangle.x = random(windowWidth/2,windowHeight/2);
-        //rectangle.y = random(windowWidth/2,windowHeight/2);
-        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
-        //rect(0, 0, windowWidth, windowHeight);
     }
 
     //The following conditionals check for top bottom walls
     if(rectangle.y > windowHeight){
         updateColors();
-        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speedy = rectangle.speedy * -1;
-        //rectangle.x = random(windowWidth/2,windowHeight/2);
-        //rectangle.y = random(windowWidth/2,windowHeight/2);
-        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
-        //rect(0, 0, windowWidth, windowHeight);
     }
     else if (rectangle.y < 0 ){
         updateColors();
-        //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speedy = rectangle.speedy * -1;
-        //rectangle.x = random(rectangle.x + 100,rectangle.x - 100);
-        //rectangle.y = random(rectangle.y + 100,rectangle.y - 100);
-        //rectangle.x = random(windowWidth/2,windowHeight/2);
-        //rectangle.y = random(windowWidth/2,windowHeight/2);
-        //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
-        //rect(0, 0, windowWidth, windowHeight);
     }
     
     //update x and y location
     rectangle.x = rectangle.x + rectangle.speed;
     rectangle.y = rectangle.y + rectangle.speedy;
 
-    //random(rectangle.x +10,rectangle.x - 10)
-    //random(rectangle.y +10,rectangle.y - 10)
+    
 
     //draws rectangle
-    //fill(rectangle.color1,rectangle.color2,rectangle.color3);
     if(x % 2 == 0){
         fill(rectangle.color1,rectangle.color2,rectangle.color3);
     }
@@ -101,8 +79,6 @@ function draw(){
         fill(rectangle.color3,rectangle.color4,rectangle.color5);
     }
     
-    //rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-    //rect(random(rectangle.x + 15,rectangle.x - 15), random(rectangle.y + 15,rectangle.y - 15), rectangle.width, rectangle.height);
     ellipse(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
     x++;
 
