@@ -8,7 +8,7 @@ let rectangle = {
     speedy: 6,
     color1: 0,
     color2: 0,
-    color3: 0
+    color3: 0,
     color4: 0,
     color5: 0,
     color6: 0
@@ -21,7 +21,7 @@ function setup(){
     background(70, 103, 80);
 
     fill(random(0,255), random(0,255), random(0,255));
-    updateColors()
+    updateColors();
 }
 
 function updateColors(){
