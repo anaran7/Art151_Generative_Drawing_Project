@@ -74,7 +74,6 @@ function draw(){
         //rectangle.y = random(windowWidth/2,windowHeight/2);
         //fill(rectangle.color1,rectangle.color2,rectangle.color3, 100);
         //rect(0, 0, windowWidth, windowHeight);
-        
     }
     else if (rectangle.y < 0 ){
         updateColors();
@@ -115,4 +114,4 @@ function draw(){
 function mouseClicked() {
     fill(70, 103, 80, 10)
     rect(0, 0, windowWidth, windowHeight);
-  }
+}
