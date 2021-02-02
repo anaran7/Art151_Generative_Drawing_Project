@@ -46,7 +46,7 @@ function draw(){
 
 
     //The following conditionals check for left right walls
-    if(rectangle.x > windowWidth - rectangle.width){
+    if(rectangle.x > windowWidth){
         updateColors();
         //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speed = rectangle.speed * -1;
@@ -66,7 +66,7 @@ function draw(){
     }
 
     //The following conditionals check for top bottom walls
-    if(rectangle.y > windowHeight - rectangle.height){
+    if(rectangle.y > windowHeight){
         updateColors();
         //fill(random(0,255), random(0,255), random(0,255));
         rectangle.speedy = rectangle.speedy * -1;
