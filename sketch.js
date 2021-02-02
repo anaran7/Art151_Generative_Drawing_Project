@@ -38,8 +38,6 @@ function draw(){
     strokeWeight(2);
     //background("#ffffff01");
 
-
-
     //the height and the width is decided by mouse input
     rectangle.width = map(mouseX, 0, windowWidth, -20, 20);
     rectangle.height = map(mouseY, 0, windowHeight, -100, 100);
