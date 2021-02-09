@@ -1,4 +1,6 @@
 /*
+Pulsing Shapes
+
 I am working with tempo of the expanding and contrasting of the circles with two main circles
 in the middle having the same tempo with one just being bigger than the other one.
 Furthermore, when you add more shapes they will be smaller than the two main circles that speed up in tempo the more you add
@@ -7,7 +9,6 @@ and with it you can create different shapes and geometry.
 Controls
 --Press 1(circle),2(long ellipse),3(combo of the 2) to add shapes at the current position of the mouse
 --Press 0 to stop the movement of the current added shapes having the blend into the background resseting the tempo when you add more cicles.
-
 
 */
 
@@ -36,6 +37,7 @@ let theta3 = 0;
 let ellis = [];
 
 function setup(){
+    alert("PULSING SHAPES: I am working with tempo of the expanding and contrasting of the circles with two main circles in the middle having the same tempo with one just being bigger than the other one. Furthermore, when you add more shapes they will be smaller than the two main circles that speed up in tempo the more you add and with it you can create different shapes and geometry. CONTROLS --Press 1(circle), 2(long ellipse), 3(combo of the 2) to add shapes at the current position of your mouse --Press 0 to stop the movement of the current added shapes having the blend into the background reseting the tempo when you add more circles.");
     createCanvas(windowWidth, windowHeight);
     background(70, 103, 80);
     maxDiameter = windowWidth; 
